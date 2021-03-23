@@ -235,7 +235,7 @@ function isNegativeOrPostive(numberEntry) {
 }
 
 function plus100 (numberEntry) {
-    return "Your number is " + (numberEntry + 100) + " if we add 100."
+    return "Your number is " + (parseFloat(numberEntry) + 100) + " if we add 100."
 }
 
 
