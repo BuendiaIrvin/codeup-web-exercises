@@ -152,16 +152,20 @@
 //
 // function square(a) {
 //     return a * a;
+//}
+// console.log(square(95));
+//
+//  Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
+
+// function sumOfSquares(a , b) {
+//     var aSquare = square(a)
+//     var bSquare = square(b)
+//     return add(aSquare, bSquare)
 // }
-// console.log(square(5));
-//
-//             Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
-//
-//
-//
-//
-//
-//         Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
+// console.log(sumOfSquares("5", "5"))
+
+
+//  Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 //
 //
 // function doMath(operator, a , b) {
@@ -175,38 +179,40 @@
 //
 // console.log(doMath("addition", 5,5))
 // console.log(doMath("multiplication",5,5))
-//
-//
-//
-//
-//
+
+
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
-//
+
 // function countWhiteSpace (string) {
-//     return (string.split(" ").length - 1)
+//     return (string.search(/\S/)) + (string.search(/\S|$/));
 // }
-// console.log(countWhiteSpace("Hello, my name is Irvin Buendia."))
+// console.log(countWhiteSpace("   Hello, my name is Irvin Buendia.   "))
 //
-//
+
+
 //     Create a function that takes in two string inputs.
 //     If the second string input is present in the first, return the first input string with the second input string removed from it.
 //     If the second string input is present multiple times in the first, the second string will only be removed where it first occurs in the first string.
 //     If the second string input is not present in the first, return the first string as entered in the function.
-//
-// function stringReturn (first , second) {
-//     if (second = first) {
-//         return
-//     }
-// }
-//
-//
-//
+
+
+
+
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
-//
-//
-//
-//
-//
+
+// function lastLetter(string) {
+//   var myString = string.slice(-1);
+// if (myString === "a") {
+//     return true;
+// } else {
+//     return false;
+// }
+// }
+// console.log(lastLetter("Quesadilla"))
+// console.log(lastLetter("Adrenaline"))
+
+
+
 // EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
 //
 //
