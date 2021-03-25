@@ -8,6 +8,11 @@
 //     }
 // }
 
+var counter = 8;
+while (counter >= 0){
+    console.log(counter);
+    counter = counter -1;
+}
 
 // Pseudocode
 
@@ -66,11 +71,13 @@
 // 32768
 // 65536
 
-var output = 1;
-while (output <= 65535) {
-    output = output * 2;
-    console.log(output);
-}
+// var output = 1;
+// while (output <= 65535) {
+//     output = output * 2;
+//     console.log(output);
+// }
+//
+
 
 
 
