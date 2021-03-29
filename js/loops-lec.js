@@ -76,20 +76,23 @@
 // Cannot sell you 6 cones I only have 3...  // If there are not enough cones
 // Yay! I sold them all! // If there are no more cones
 
-var allCones = Math.floor(Math.random() * 50) + 50;
-console.log("We have " + allCones + " to sell.")
+// var allCones = Math.floor(Math.random() * 50) + 50;
+// console.log("We have " + allCones + " to sell.")
+//
+// do {
+//     var conesSold = Math.floor(Math.random() * 5) + 1;
+//     if (allCones < conesSold) {
+//         console.log("Sorry we do not have " + conesSold + ", we only have " + allCones + " left");
+//     } else {
+//         allCones = allCones - conesSold;
+//         console.log(conesSold + " cones sold " + allCones + " cones left");
+//     }
+// }
+//     while (allCones > 0) ;
+//         console.log("We sold all the cones!");
+//
 
-do {
-    var conesSold = Math.floor(Math.random() * 5) + 1;
-    if (allCones < conesSold) {
-        console.log("Sorry we do not have " + conesSold + ", we only have " + allCones + " left");
-    } else {
-        allCones = allCones - conesSold;
-        console.log(conesSold + " cones sold " + allCones + " cones left");
-    }
-}
-    while (allCones > 0) ;
-        console.log("We sold all the cones!");
+
 
 
 
