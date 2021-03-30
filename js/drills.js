@@ -214,27 +214,46 @@ console.log(lastLetter("Adrenaline"))
 
 
 // EXTRA CHALLENGE: create a function that will return how many whitespace characters are at the beginning of a string (hint: use regex).
-//
-//
-//
-//
+
+function whiteSpaceFront (string) {
+    return (string.search(/\S/))
+}
+console.log(whiteSpaceFront("   Hello there neighbor!"))
+
+
 //Create a function returnTrueMessage() that returns the string "Hey, it's true!"
-//
-//
-//
-//
+
+function returnTrueMessage() {
+    return "Hey, it's true!";
+}
+console.log(returnTrueMessage());
+
 //Create a function returnFalseMessage() that returns the string "Hey, it's false!"
-//
-//
-//
+
+function returnFalseMessage() {
+    return "Hey, it's false!";
+}
+console.log(returnFalseMessage());
+
 //Create a function returnMessage() that takes in a function and returns the call to the function
-//
-//
+
+function returnMessage(x) {
+    return x;
+}
+console.log(returnMessage(returnFalseMessage()));
+
 //Experiement passing in different functions.
-//
-//
+
+console.log(returnMessage(returnTrueMessage()));
+console.log(returnMessage(whiteSpaceFront(" Hi!")));
+console.log(returnMessage(lastLetter("Well hello there")))
+
+
+
 //Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
-//
-//
-//
+
+function willLoginUser(username, password, age, ) {
+
+}
+
 //The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
