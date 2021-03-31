@@ -35,19 +35,38 @@
 // Here is an odd number: 47
 // Here is an odd number: 49
 
-var userInput = 0;
+//var oddNumber= parseInt(prompt("Give me an odd number between 1 and 50 please?"));
+var oddNumber= parseInt(prompt("Give me an odd number between 1 and 50 please?"));
 
-while (userInput !== "You are never gonna come up with this.") {
-   var userInput = parseFloat(prompt("Please enter an odd number between 1 & 50."))
-    if (userInput % 2 === 1) {
-        console.log("About to break out")
-        break;
-    }
+function isNumberEven(num) {
+    return num % 2 === 0;
 }
 
+function isNumberInRange(num) {
+    return num >= 1 && num <=50;
+}
+
+while(true) {
+    if (!isNumberEven(oddNumber) && isNumberInRange(oddNumber)){
+        break;
+    }
+    oddNumber= parseInt(prompt("Give me an odd number between 1 and 50 please?"));
+}
+
+
+// var userInput = 0;
+//
+// while (userInput !== "You are never gonna come up with this.") {
+//    var userInput = parseFloat(prompt("Please enter an odd number between 1 & 50."))
+//     if (userInput % 2 === 1) {
+//         console.log("About to break out")
+//         break;
+//     }
+// }
+//
 for (var i = 1; i <= 50; i+2) {
-    if (i === userInput) {
-        console.log("Yikes! Skipping number: " + userInput);
+    if (i === oddNumber) {
+        console.log("Yikes! Skipping number: " + oddNumber);
         continue;
     }
     console.log(i);
