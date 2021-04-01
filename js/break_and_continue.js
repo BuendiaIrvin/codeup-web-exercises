@@ -63,7 +63,7 @@ while(true) {
 //         break;
 //     }
 // }
-//
+
 for (var i = 1; i <= 50; i+2) {
     if (i === oddNumber) {
         console.log("Yikes! Skipping number: " + oddNumber);

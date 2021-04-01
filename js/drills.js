@@ -97,9 +97,11 @@ console.log(reverse("yelnats"));
 //Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
 
 function isNumeric(input) {
-    return !!input;
+    return Number.isInteger(input)
 }
 console.log(isNumeric(50));
+console.log(isNumeric("Hello"))
+console.log(isNumeric(true))
 
 
 //Write a function called count(input) that takes in a string and returns the number of characters.
@@ -167,18 +169,30 @@ console.log(sumOfSquares("5", "5"))
 
 //  Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 
-
-function doMath(operator, a , b) {
-    if (operator === "addition") {
-        return a + b;
+function doMath(operator, a, b) {
+    if (operator === "add()") {
+        return add(a,b)
     } else if
-    (operator === "multiplication") {
-        return a * b;
+    (operator === "subtract()") {
+        return subtract(a,b)
+    } else if
+    (operator === "multiply()") {
+        return multiply(a,b)
     }
 }
 
-console.log(doMath("addition", 5,5))
-console.log(doMath("multiplication",5,5))
+// function doMath(operator, a , b) {
+//     if (operator === "addition") {
+//         return a + b;
+//     } else if
+//     (operator === "multiplication") {
+//         return a * b;
+//     }
+// }
+
+console.log(doMath("add()", 5,5))
+console.log(doMath("subtract()",5,5))
+console.log(doMath("multiply()",5,5))
 
 
 //Create a function that will return how many whitespace characters are at the beginning and end of a string.
@@ -198,11 +212,13 @@ console.log(countWhiteSpace("   Hello, my name is Irvin Buendia.   "))
 
 
 
+
 // Create a function that takes in a string and returns true if the last letter is an "a" (otherwise, return false).
 
 function lastLetter(string) {
   var myString = string.slice(-1);
-if (myString === "a") {
+if (myString === "a")
+{
     return true;
 } else {
     return false;
@@ -252,8 +268,23 @@ console.log(returnMessage(lastLetter("Well hello there")))
 
 //Create a function, willLoginUser() that takes in a username string, password string, user age, a boolean indicating if they are an admin.
 
-function willLoginUser(username, password, age, ) {
-
-}
 
 //The function will return true if the username is not the same as the password and the user is at least 18 years old. If the user is an admin, they do not have to be a certain age but the password must still not match the username.
+
+function add(x,y) {
+    if (!isNaN(parseFloat(x,y))){
+        var xNum = parseInt(x);
+        var yNum = parseInt(y);
+        return (xNum + yNum);
+    } else {
+        return false;
+    }
+}
+
+console.log(add("2","3"));
+
+function add(a , b) {
+    return a + b;
+}
+console.log(add(45,45));
+
