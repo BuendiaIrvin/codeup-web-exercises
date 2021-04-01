@@ -53,6 +53,8 @@
         {name: 'George', amount: 320}
     ];
 
+
+
     function discount(x) {
         var minSpend = 200;
         var discAmount = .12;
@@ -64,7 +66,6 @@
             }
         })
     }
-
     discount(shoppers);
 
     // Naysas:
@@ -154,12 +155,12 @@
      *      ---
      *      ...
      */
-    books.forEach(function(book, index){
-    console.log("Book # "+ (index + 1));
-    console.log("Title: " + book.title);
-    console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-    console.log("---")
-})
+//     books.forEach(function(book, index){
+//     console.log("Book # "+ (index + 1));
+//     console.log("Title: " + book.title);
+//     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+//     console.log("---")
+// })
 
     /**
      * Bonus:
@@ -172,17 +173,26 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title,author) {
+    function createBook(title, author) {
+        var fullName = author.split(" ");
+        var firstName = fullName[0];
+        var lastName = fullName[1];
         return {
             title: title,
             author: {
-                firstName: author,
-
-
+                firstName: firstName,
+                lastName: lastName
             }
         }
     }
+    books.push(createBook("It", "Stephen King"));
 
-    console.log(createBook("It","Stephen King"));
+    function showBookInfo(book, index) {
+            console.log("Book # "+ (index + 1));
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+            console.log("---")
+    }
+    books.forEach(showBookInfo);
 
 })();
