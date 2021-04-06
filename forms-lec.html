@@ -8,20 +8,20 @@
     <h1>Forms Lecture</h1>
     <h2>Exploring the ever present forms in HTML</h2>
     <hr>
-    <form methos="POST" action="https://request-inspector.glitch.me/">
+    <form method="POST" action="https://request-inspector.glitch.me/">
 
         <label for="username">username</label>
-        <input id="username" name="username" type="text">
+        <input id="username" name="username" type="text" placeholder="Username here">
         <br>
 
 
         <label for="password">password</label>
-        <input id="password" name="password" type="text">
+        <input id="password" name="password" type="text" placeholder="Password here">
         <br>
 
         <label for="body-text">Tell me about yourself...</label>
         <br>
-        <textarea id="body-text" name="body" cols=30" rows="10"></textarea>
+        <textarea id="body-text" name="body" cols=30" rows="10" placeholder="Tell me about your day!"></textarea>
         <br>
 
         <h3>What is the correct answer?</h3>
@@ -38,8 +38,6 @@
         <input name="multi-choice" id="choice-d" value="Wrong-D" type="radio">
         <br>
 
-        <input name="Newsletter"
-
 
         <h3>How'd you hear about us?</h3>
         <input id="ad-bb" name="advertising" value="billboard" type="checkbox">
@@ -48,6 +46,28 @@
         <label for="ad-yt">Youtube</label>
         <input id="ad-np" name="advertising" value="newspaper" type="checkbox">
         <label for="ad-np">Newspaper</label>
+        <br>
+
+
+        <input name="newsletter" type="checkbox" checked><span>Would you like to sign up for our news letter?</span>
+
+        <h3>
+            <label for="coffee-preference">What kind of coffee roast do you like?<</label>
+        </h3>
+        <select id="coffee-preference" name="coffee_preference">
+            <option value="light">Light Roast</option>
+            <option value="medium">Medium Roast</option>
+            <option value="dark">Dark Roast</option>
+            <option value="espresso">Espresso Blend</option>
+        </select>
+
+        <input name="the-answer" value="42" type="hidden">
+        <br>
+
+        <input name="userID" value="1234" type="hidden">
+
+        <label for="nonactive">Ignore this</label>
+        <input id="nonactive" name="userID" type="text" disabled value="12345">
         <br>
 
         <button type="submit">Submit Form!</button>
