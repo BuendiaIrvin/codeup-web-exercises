@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lec</title>
+</head>
+<body>
+    <h1>Forms Lecture</h1>
+    <h2>Exploring the ever present forms in HTML</h2>
+    <hr>
+    <form methos="POST" action="https://request-inspector.glitch.me/">
+
+        <label for="username">username</label>
+        <input id="username" name="username" type="text">
+        <br>
+
+
+        <label for="password">password</label>
+        <input id="password" name="password" type="text">
+        <br>
+
+        <label for="body-text">Tell me about yourself...</label>
+        <br>
+        <textarea id="body-text" name="body" cols=30" rows="10"></textarea>
+        <br>
+
+        <h3>What is the correct answer?</h3>
+        <label name="multi-choice">A</label>
+        <input name="multi-choice" id="choice-a" value="Wrong-A" type="radio">
+        <br>
+        <label name="multi-choice">B</label>
+        <input name="multi-choice" id="choice-b" value="Wrong-B" type="radio">
+        <br>
+        <label name="multi-choice">C</label>
+        <input name="multi-choice" id="choice-c" value="Correct" type="radio">
+        <br>
+        <label name="multi-choice">D</label>
+        <input name="multi-choice" id="choice-d" value="Wrong-D" type="radio">
+        <br>
+
+        <input name="Newsletter"
+
+
+        <h3>How'd you hear about us?</h3>
+        <input id="ad-bb" name="advertising" value="billboard" type="checkbox">
+        <label for="ad-bb">Billboard</label>
+        <input id="ad-yt" name="advertising" value="youtube" type="checkbox">
+        <label for="ad-yt">Youtube</label>
+        <input id="ad-np" name="advertising" value="newspaper" type="checkbox">
+        <label for="ad-np">Newspaper</label>
+        <br>
+
+        <button type="submit">Submit Form!</button>
+
+    </form>
+
+</body>
+</html>
