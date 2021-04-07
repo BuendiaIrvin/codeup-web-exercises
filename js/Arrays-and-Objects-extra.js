@@ -4,36 +4,47 @@
 // returns an array of only the numbers type in ascencding order.
 // Example input: ["fred", true, 5, 3] Example output: [3, 5]
 
-function filterNumbers(array){
-    var filtered = array[0].replace(/\D+/g, ' ').trim().split(' ').map(e => parseInt(e));
-    return filtered;
+function filterNumbers(array) {
+    var bucket=[];
+    array.forEach(function(element) {
+        if (typeof element === "number") {
+           bucket.push(element);
+        }
+    })
+    return bucket.sort(function(a, b){return a-b});
 }
 
-console.log(filterNumbers(["fred", true, 5, 3]));
+console.log(filterNumbers(["fred", true, 5, 3, 2, 10, 4, 349, "10", "3"]));
 
 
 // Write a function, getOlder() that takes in array of dog objects and increases
 // the value of each object's age property by 1.
-//
 // Example input:
-//
-//     [
-//         {
-//             name: "Chompers",
-//             breed: "Pug",
-//             age: 7
-//         },
-//         {
-//             name: "Freddy",
-//             breed: "Lab",
-//             age: 4
-//         },
-//         {
-//             name: "Mr. Pig",
-//             breed: "Mastif",
-//             age: 10
-//         }
-//     ]
+  var dogs = [
+        {
+            name: "Chompers",
+            breed: "Pug",
+            age: 7
+        },
+        {
+            name: "Freddy",
+            breed: "Lab",
+            age: 4
+        },
+        {
+            name: "Mr. Pig",
+            breed: "Mastif",
+            age: 10
+
+        }
+    ]
+function getOlder(array) {
+      array.forEach(function(element){
+          return element.age++;
+    })
+    }
+console.log(dogs)
+
 // Example output
 //
 //     [
@@ -53,6 +64,9 @@ console.log(filterNumbers(["fred", true, 5, 3]));
 //             age: 11
 //         }
 //     ]
+
+
+
 // Write a function, washCars() that takes in a array of car objects and sets
 // the boolean properties of isDirty to false.
 //
