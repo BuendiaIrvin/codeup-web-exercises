@@ -1,0 +1,100 @@
+.fancy-header {
+    color: #dce0e7;
+    text-decoration: underline;
+    text-align: center;
+}
+
+header {
+    color:white;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 250%;
+}
+
+h2, h1 {
+    color: #ffffff;
+    text-decoration: ;
+    font-family: Chalkboard;
+    border-bottom: 1px solid black;
+    text-align: center;
+    font-size: 300%;
+}
+
+ul {
+    color:white;
+    list-style-type: none;
+    text-align: center;
+    font-size: 200%;
+}
+
+
+ul li:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-size: 10px;
+    background-image: url("https://www.gifs.cc/anibul1c.gif");
+    background-repeat: no-repeat;
+    margin-right: 5px;
+
+}
+ol {
+    color:white;
+    list-style-type: upper-roman;
+    text-align: center;
+    font-size: 200%;
+}
+
+
+ol li:before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    margin-right: 5px;
+}
+body {
+    height: 150vh;
+    background-color: black;
+    background-image: url("https://images.pexels.com/photos/2603464/pexels-photo-2603464.jpeg?cs=srgb&dl=pexels-aleksandar-pasaric-2603464.jpg&fm=jpg");
+    background-size: cover;
+}
+table, th, td {
+    width: 50%;
+    color:white;
+    border: 5px solid;
+    border-color: white;
+    text-align: center;
+    font-size: 150%;
+    padding: 10px;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.images {
+    margin-right: auto;
+    margin-left: auto;
+}
+p {
+    color:white;
+    text-align: center;
+}
+ footer p {
+     font-size: 200%;
+     text-align: end;
+     color: red;
+ }
+ :hover {
+     color: yellow;
+ }
+ :visited {
+     color:pink;
+ }
+ :link {
+     color:orangered;
+ }
+ :active {
+     color:blue;
+ }
