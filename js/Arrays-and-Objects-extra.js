@@ -43,7 +43,8 @@ function getOlder(array) {
           return element.age++;
     })
     }
-console.log(dogs)
+    getOlder(dogs);
+    console.log(dogs)
 
 // Example output
 //
@@ -69,29 +70,42 @@ console.log(dogs)
 
 // Write a function, washCars() that takes in a array of car objects and sets
 // the boolean properties of isDirty to false.
-//
+
+
+
 //     Example input:
 //
-//     [
-//         {
-//             make: 'Volvo',
-//             color: 'red',
-//             year: 1996,
-//             isDirty: true
-//         },
-//         {
-//             make: 'Toyota',
-//             color: 'black',
-//             year: 2004,
-//             isDirty: false
-//         },
-//         {
-//             make: 'Ford',
-//             color: 'white',
-//             year: 2007,
-//             isDirty: true
-//         }
-//     ]
+   var vehicles = [
+        {
+            make: 'Volvo',
+            color: 'red',
+            year: 1996,
+            isDirty: true
+        },
+        {
+            make: 'Toyota',
+            color: 'black',
+            year: 2004,
+            isDirty: false
+        },
+        {
+            make: 'Ford',
+            color: 'white',
+            year: 2007,
+            isDirty: true
+        }
+    ]
+    function washCars(array) {
+        array.forEach(function (element) {
+            if (element.isDirty = true) {
+                return (element.isDirty = false);
+            };
+        });
+    }
+
+washCars(vehicles);
+console.log(vehicles);
+
 // Example output
 //
 //     [
@@ -117,23 +131,35 @@ console.log(dogs)
 // Write a function, adminList() that takes in an array of user objects and returns
 // a count of all admins based on the isAdmin property. Refactor to return an array
 // of admin-only user emails. Refactor again to return an array of user objects that are admins.
+
+//  Example Input:
 //
-//     Example Input:
-//
-//     [
-//         {
-//             isAdmin: true,
-//             email: 'user1@email.com'
-//         },
-//         {
-//             isAdmin: true,
-//             email: 'user2@email.com'
-//         }
-//         {
-//             isAdmin: false,
-//             email: 'user3@email.com'
-//         }
-//     ]
+ var user =[
+        {
+            isAdmin: true,
+            email: 'user1@email.com'
+        },
+        {
+            isAdmin: true,
+            email: 'user2@email.com'
+        },
+        {
+            isAdmin: false,
+            email: 'user3@email.com'
+        }
+        ]
+    var userAdmin=[];
+
+    function adminList(array) {
+        array.forEach(function (element) {
+            if (element.isAdmin === true) {
+                userAdmin.push(element.email);
+            }
+        })
+    }
+    adminList(user);
+    console.log(userAdmin);
+
 // Example Output (before refactor): 2
 //
 // Example Output (after 1st refactor):
