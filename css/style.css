@@ -1,7 +1,10 @@
+@import
+
 .fancy-header {
-    color: #dce0e7;
+    color: #ffffff;
     text-decoration: underline;
     text-align: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 header {
@@ -9,15 +12,16 @@ header {
     text-decoration: underline;
     text-align: center;
     font-size: 250%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 h2, h1 {
     color: #ffffff;
-    text-decoration: ;
     font-family: Chalkboard;
     border-bottom: 1px solid black;
     text-align: center;
     font-size: 300%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 ul {
@@ -25,6 +29,7 @@ ul {
     list-style-type: none;
     text-align: center;
     font-size: 200%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
@@ -37,6 +42,7 @@ ul li:before {
     background-image: url("https://www.gifs.cc/anibul1c.gif");
     background-repeat: no-repeat;
     margin-right: 5px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
 }
 ol {
@@ -44,6 +50,7 @@ ol {
     list-style-type: upper-roman;
     text-align: center;
     font-size: 200%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
@@ -68,6 +75,7 @@ table, th, td {
     text-align: center;
     font-size: 150%;
     padding: 10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .center {
     margin-left: auto;

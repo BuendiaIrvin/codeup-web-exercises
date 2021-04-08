@@ -184,23 +184,23 @@ console.log(vehicles);
 // breads and fillings and returns an array of sandwhichObjects that contain properties for
 // bread and filling and values correspond to the same order of the two passed in arrays.
 // Assume the two array inputs are the same length.
-//
-//     Example Input:
-//
-//     var breads  = [
-//         "white",
-//         "wheat",
-//         "rhy",
-//         "white"
-//     ];
-//
-// var fillings = [
-//     "pb&j",
-//     "ham",
-//     "cheese steak",
-//     "tuna"
-// ];
-//
+
+    // Example Input:
+
+    var breads  = [
+        "white",
+        "wheat",
+        "rhy",
+        "white"
+    ];
+
+    var fillings = [
+    "pb&j",
+    "ham",
+    "cheese steak",
+    "tuna"
+];
+
 // makeSandwhichObjects(breads, fillings)
 // Example Output:
 //
@@ -222,3 +222,8 @@ console.log(vehicles);
 //             filling: "tuna"
 //         }
 //     ]
+
+    var result = {};
+    breads.forEach((breads, i) => result[breads] = fillings[i]);
+    console.log(result);
+
