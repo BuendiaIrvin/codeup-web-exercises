@@ -1,5 +1,3 @@
-@import
-
 .fancy-header {
     color: #ffffff;
     text-decoration: underline;
@@ -48,19 +46,13 @@ ul li:before {
 ol {
     color:white;
     list-style-type: upper-roman;
+    list-style-position: inside;
     text-align: center;
     font-size: 200%;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
-ol li:before {
-    content: '';
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    margin-right: 5px;
-}
 body {
     height: 150vh;
     background-color: black;
@@ -76,6 +68,12 @@ table, th, td {
     font-size: 150%;
     padding: 10px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border-collapse: collapse;
+}
+
+
+th {
+    background-color:black;
 }
 .center {
     margin-left: auto;
@@ -93,6 +91,8 @@ p {
      font-size: 200%;
      text-align: end;
      color: red;
+
+
  }
  :hover {
      color: yellow;
