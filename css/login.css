@@ -37,8 +37,9 @@ fieldset {
 
 .form-group {
     width: 100%;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: .5px;
+    margin-bottom: .5px;
+
 
     /* This element must use 100% of the width */
     /* It should have a separation of .5em from elements on top of it and below it*/
@@ -46,7 +47,42 @@ fieldset {
 
 .form-label {
     font-weight: bold;
-    margin-left: .5em;
+    margin-left: 1em;
+    margin-top: 10em;
+
+    /* The text of a label must be bold */
+}
+
+.btn-block {
+    width: 100%;
+    /* This element should use 100% of the width */
+}
+
+.btn {
+    width:8px;
+    color: white;
+    font-weight: bold;
+    border-width: 1px;
+    border-color: lightgrey;
+    /* There must be a separation of 8px between the text and the border of this element */
+    /* The text color of this element should be white and bold */
+    /* The border of this element should be 1px, and its color should be light grey */
+    background-color: #0fb784;
+}
+
+.form-control {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    box-sizing: border-box;
+    /* There must be 4px on top of the text and below the text of an input with this class */
+    /* It should have a separation of .5em from elements on top of it and below it */
+    /* You'll need to use the `calc` function to make the width of this element match the width of the button */
+    /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
+    /* HINT: Calculate based on the padding of the `.btn` class */
+    /* HINT: Examples are available at: https://glitch.com/~input-button-width */
+    width: 100%;
 
     /* The text of a label must be bold */
 }
@@ -81,6 +117,11 @@ fieldset {
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
     width: 100%;
+}
+
+
+
+
 }
 
 
