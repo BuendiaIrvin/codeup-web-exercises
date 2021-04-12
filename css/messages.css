@@ -1,3 +1,15 @@
+:root {
+    --bg-success: #cff3da;
+    --text-success:#237a47;
+    --bg-info: #cddeff;
+    --text-info: #342b90;
+    --bg-warning: #fcfbc9;
+    --text-warning: #a29234;
+    --bg-error: #fad3d7;
+    --text-error: #9a3b52;
+
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -5,27 +17,26 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
-div {
-    margin: 10px;
-    padding: 5px;
-}
 .message {
-    border: 1px solid #dadada;
-    border-radius: 5px;
+    margin: .5em 0;
+    padding: .5em;
+    border: solid lightgrey 2px;
+    border-radius: 10px;
 }
 .message-info {
-    color: #2c2387;
-    background-color: #d0defb;
+    background: var(--bg-info);
+    color: var(--text-info);
 }
-.message-success{
-    color: #2b6335;
-    background-color: #d6f2dc;
+
+.message-success {
+    background: var(--bg-success);
+    color: var(--text-success);
 }
-.message-warning{
-    color: #7d712f;
-    background-color: #fcfbce;
+.message-warning {
+    background: var(--bg-warning);
+    color: var(--text-warning);
 }
 .message-error {
-    color: #671725;
-    background-color: #f4d4d7;
+    background: var(--bg-error);
+    color: var(--text-error);
 }
