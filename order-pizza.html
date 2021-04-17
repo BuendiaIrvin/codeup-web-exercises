@@ -53,9 +53,9 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input"> Small (10")</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Medium (12")</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Large (14")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input"> Small (10")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Medium (12")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Large (14")</li>
                 </ul>
             </div>
             <div class="card" style="width: 18rem;">
@@ -64,9 +64,9 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input"> Small (10")</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Medium (12")</li>
-                    <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Large (14")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input"> Small (10")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Medium (12")</li>
+                    <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Large (14")</li>
                 </ul>
             </div>
 
@@ -74,19 +74,88 @@
         </div>
     </li>
     <li class="nav-item">
+        <div class="card">
         <a class="nav-link" href="#">
             Cheese and Sauce <span class="badge badge-light">2</span>
             <span class="sr-only">order</span>
         </a>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Cheese
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">How Much? <select class="form-control">
+                        <option>Light</option>
+                        <option>Normal</option>
+                        <option>Extra</option>
+                        <option>Double</option>
+                    </select>
+                    </li>
 
-    </li>
+                </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Sauce
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">What Type? <select class="form-control">
+                        <option>Tomato sauce</option>
+                        <option>Marinara sauce</option>
+                        <option>BBQ sauce</option>
+                        <option>Alfredo sauce</option>
+                    </select>
+                    </li>
+
+                </ul>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">How Much? <select class="form-control">
+                        <option>Light</option>
+                        <option>Normal</option>
+                        <option>Extra</option>
+                    </select>
+                    </li>
+                </ul>
+                <a href="#" class="btn btn-primary">< Previous Step</a>
+                <a href="#" class="btn btn-primary">Next Step ></a>
+            </div>
+
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            Toppings <span class="badge badge-light">3</span>
-            <span class="sr-only">order</span>
-        </a>
-    </li>
-</ul>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <div class="card">
+                <a class="nav-link active" href="#">
+                    Size and Crust
+                    <span class="badge badge-light">1</span>
+                    <span class="sr-only">order</span>
+                </a>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Choose Meats
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Beef</li>
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Ham</li>
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Philly Steak</li>
+                        <li class="list-group-item"><input type="radio" aria-label="Radio button for following text input">Bacon</li>
+                    </ul>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Choose Non-Meats
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Green Peppers</li>
+                        <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Mushrooms</li>
+                        <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Onions</li>
+                        <li class="list-group-item"><input name="pizzasize" type="radio" aria-label="Radio button for following text input">Jalapeno Peppers</li>
+                    </ul>
+                </div>
+
+                <a href="#" class="btn btn-primary">< Previous Step</a>
+                <a href="#" class="btn btn-primary">Next Step ></a>
+            </div>
+        </li>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
