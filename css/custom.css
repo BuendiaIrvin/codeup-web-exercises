@@ -12,18 +12,8 @@
     color: grey;
 }
 
-.input-group-text {
-    margin: 0 3em 0 0;
-    display: flex;
-    justify-content: space-between;
 
-}
-.card {
-    padding: .5em;
-    margin: .5em;
-}
-.list-group-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.btn-primary {
+    flex-direction: row;
+    align-items: flex-end;
 }
