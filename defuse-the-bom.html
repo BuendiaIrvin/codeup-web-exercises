@@ -3,11 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
+    <link rel="stylesheet" href="css/defuse-the-bomb.css">
 </head>
 <body>
 
+<div class="header">
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+</div>
 
 <script>
 (function() {
@@ -43,6 +46,6 @@
     var defuser = document.getElementById('defuser');
     defuser.addEventListener('click', defuseTheBOM);
 })();
-    <img src="images/pizza.png" height="346" width="1323"/><img src="images/pizza.png" height="346" width="1323"/></script>
+</script>
 </body>
 </html>

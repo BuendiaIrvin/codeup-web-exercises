@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5em;
+    padding: 5em;
+}
+
+body {
+    height: 150vh;
+    background-image: url(https://images.pexels.com/photos/4811240/pexels-photo-4811240.jpeg?cs=srgb&dl=pexels-griffin-wooldridge-4811240.jpg&fm=jpg);
+    background-size: cover;
+
+}
