@@ -7,7 +7,10 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<button type="submit" id="change-btn">Change Main Header</button>
 
+
+<button type="submit" id="list-color-btn">Change list Colors</button>
 <div id="navbar">
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -17,6 +20,8 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 </div>
+<input type="button" value="On" id="onoff" onClick="onoff();">
+<button type="submit" id="color-btn">Change sub-header Color</button>
 
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
@@ -29,6 +34,8 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button type="submit" id="paragraph-btn">Change the paragraph content</button>
+
 <script>
     (function() {
         "use strict";
@@ -37,14 +44,44 @@
         console.log(mainHeader);
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
+
+        document.querySelector("#onoff").addEventListener("click", function() {
+            document.getElementById('onoff').value;
+                 if(currentvalue == "Off") {
+                     mainHeader.innerHTML = "Hello World!"
+                     document.getElementById("onoff").value = "On"
+                 } else {
+                     mainHeader.innerHTML = "JavaScript is Cool"
+                     document.getElementById("onoff").value="Off"
+
+                 }
+        });
+
+
+
+        // function onoff(){
+        //     currentvalue = document.getElementById('onoff').value;
+        //     if(currentvalue == "Off"){
+        //         document.getElementById("onoff").value="On";
+        //     }else{
+        //         document.getElementById("onoff").value="Off";
+        //     }
+        // }
+
+
+
 
         // TODO: Uncomment the next line and get the sub header element by id
+
          var subHeader = document.getElementById("sub-header");
 
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+
+        document.querySelector("#color-btn").addEventListener("click", function() {
+            subHeader.style.color = 'blue';
+        });
+
 
 
         // TODO: Uncomment the next line and get all list items
@@ -52,6 +89,8 @@
          console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
+
+        document.querySelector("#list-color-btn").addEventListener("click", function() {
         for (var i = 0; i < listItems.length; i++) {
             if (listItems[i].getAttribute('data-dbid') === '1') {
                 listItems[i].style.color = "blue";
@@ -60,6 +99,7 @@
                 listItems[i].style.color = "grey";
             }
         }
+    });
 
         // TODO: Set text color of li with dbid = 1 to blue
         // for (var i =0; i < listItems.length; i++) {
@@ -75,8 +115,28 @@
         console.log(subParagraphs);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+
+        document.querySelector("#paragraph-btn").addEventListener("click", function() {
         subParagraphs[0].innerHTML= "Mission Accomplished!";
+    });
+
     })();
+
+
+        //need this for the on off button
+        function onoff(){
+        currentvalue = document.getElementById('onoff').value;
+        if(currentvalue == "Off"){
+        document.getElementById("onoff").value="On";
+    }else{
+        document.getElementById("onoff").value="Off";
+    }
+    }
+
+
+
+
 </script>
+
 </body>
 </html>
