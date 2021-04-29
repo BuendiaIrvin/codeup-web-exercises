@@ -7,7 +7,7 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
-<button type="submit" id="change-btn">Change Main Header</button>
+<input type="button" value="On" id="onoff" onClick="onoff();">
 
 
 <button type="submit" id="list-color-btn">Change list Colors</button>
@@ -20,7 +20,7 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 </div>
-<input type="button" value="On" id="onoff" onClick="onoff();">
+
 <button type="submit" id="color-btn">Change sub-header Color</button>
 
 <h2 id="sub-header">Hello Again.</h2>
@@ -45,6 +45,8 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
+
+        // this needs the onoff function plugged in at the bottom of this script
         document.querySelector("#onoff").addEventListener("click", function() {
             document.getElementById('onoff').value;
                  if(currentvalue == "Off") {
@@ -58,15 +60,6 @@
         });
 
 
-
-        // function onoff(){
-        //     currentvalue = document.getElementById('onoff').value;
-        //     if(currentvalue == "Off"){
-        //         document.getElementById("onoff").value="On";
-        //     }else{
-        //         document.getElementById("onoff").value="Off";
-        //     }
-        // }
 
 
 
