@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.invisible {
+
+    visibility: hidden;
+}
+
+.highlight {
+    background-color: greenyellow;
+}
+
+dd, dt {
+
+    display: flex;
+    justify-content: center;
+}
+
+.yellowstone, .yosemite, .death, .grand {
+    margin: 2em;
+}

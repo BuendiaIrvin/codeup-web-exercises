@@ -1,30 +1,14 @@
-
     function activateCheat() {
         document.body.style.backgroundImage = "url('images/IMG_1707 (1).jpg')";
+
 
         var audio = new Audio('mp3/final_6090474458f0c1010c549607_181973.mp3');
         audio.play();
 
     }
 
-
-
-
-
-var keyHandler = function (event) {
-    console.log(event.key);
-};
-
 var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 var current = 0;
-
-var keyHandler = function (event) {
-    // If the key isn't in the pattern, reset
-    if (pattern.indexOf(event.key) < 0) {
-        current = 0;
-        return;
-    }
-};
 
 var keyHandler = function (event) {
     // If the key isn't in the pattern, or isn't the current key in the pattern, reset
@@ -34,7 +18,7 @@ var keyHandler = function (event) {
     }
     // Update how much of the pattern is complete
     current++;
-    // If complete, alert and reset
+    // If complete, activate and reset
     if (pattern.length === current) {
         current = 0;
         activateCheat();
