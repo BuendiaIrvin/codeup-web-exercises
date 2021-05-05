@@ -6,13 +6,25 @@
     <link rel="stylesheet" href="css/konami.css">
     <style>
         body {
-            background-image: url("images/IMG_1708 (1).jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-color: blue;
         }
     </style>
 </head>
 <body>
+
+<h1> Level 1</h1>
+<div class="lvlOne"><p>Enter Konami Code to Start Game</p></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/konami.js"></script>
+<script>
+    $(".lvlOne").delay(15000).fadeOut(300);
+    $(".lvlTwo").delay(10000).fadeOut(300);
+    $(".lvlThree").delay(9000).fadeOut(300);
+    $(".lvlFour").delay(88000).fadeOut(300);
+    $(".lvlFive").delay(87000).fadeOut(300);
+
+</script>
 </body>
 </html>
