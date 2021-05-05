@@ -22,3 +22,27 @@ dd, dt {
 .yellowstone, .yosemite, .death, .grand {
     margin: 2em;
 }
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+
+}
+
+#container {
+    width: 826px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.picture img {
+    border: 10px solid saddlebrown;
+}
+
+button {
+    alignment: center;
+    margin-top: 15px;
+}

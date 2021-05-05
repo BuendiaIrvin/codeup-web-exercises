@@ -80,19 +80,19 @@
     <li>A volcanic explosion left its mark in Death Valley.</li>
     <li>Really, there are fish in Death Valley.</li>
 </ul>
+    <button id="last-li">Highlight Last</button>
 </div>
+    <h1>jQuery Traversing</h1>
+    <div id="container">
+        <div id="picture1" class="picture"><img src="images/pexels-fauxels-3184632.jpg"><button type="button" id="button1">swap</button></div>
+        <div id="picture2" class="picture"><img src="images/pexels-josh-sorenson-1714208.jpg"><button type="button" id="button2">swap</button></div>
+        <div id="picture3" class="picture"><img src="images/pexels-negative-space-34092.jpg"><button type="button" id="button3">swap</button></div>
+    </div>
 
-<aside>
-<section>
-    <p>
-        <button id="last-li">Highlight Last</button>
-    </p>
-</section>
-</aside>
-</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/jquery_faq.js"></script>
 <script>
     $('.link').click(function(){
         if ($('.invisible').css('visibility') == 'hidden') {
@@ -117,25 +117,21 @@
         });
 
 
-    $("#last-li").click(function(){
-        /* output = */ $(this).parent().parent().parent().parent().children("div").children("ul").children("li").last().css("background-color", "yellow");
-        // console.log(output);
+    $("#last-li").click(function() {
+        $("ul").each(function () {
+            $(this).children().last().css("background-color", "yellow");
+        });
     });
 
     $("h3").click(function(){
-        /* output = */ $(this).next().children("li").css("font-weight", "bold");
-        // console.log(output);
+        $(this).next().children("li").css("font-weight", "bold");
+
     });
 
     $("li").click(function(){
-        /* output = */ $(this).parent().children().first().css("color", "blue");
-        // console.log(output);
+        $(this).parent().children().first().css("color", "blue");
+
     });
-
-
-
-
-
 </script>
 </body>
 </html>
