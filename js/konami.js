@@ -36,10 +36,10 @@
 
 
 //lvl 1
-var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-var current = 0;
+    var pattern = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    var current = 0;
 
-var keyHandler = function (event) {
+    var keyHandler = function (event) {
     // If the key isn't in the pattern, or isn't the current key in the pattern, reset
     if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
         current = 0;
@@ -73,7 +73,7 @@ var keyHandler = function (event) {
         }
     };
 
-    //lvl 3
+//lvl 3
     var pattern3 = ['ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'b', 'a'];
     var current3 = 0;
 
@@ -92,25 +92,25 @@ var keyHandler = function (event) {
         }
     };
 
-    //lvl4
+//lvl4
 
-var pattern4 = ['ArrowLeft', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-var current4 = 0;
+    var pattern4 = ['ArrowLeft', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    var current4 = 0;
 
-var keyHandler4 = function (event) {
-    // If the key isn't in the pattern, or isn't the current key in the pattern, reset
-    if (pattern4.indexOf(event.key) < 0 || event.key !== pattern4[current4]) {
+    var keyHandler4 = function (event) {
+        // If the key isn't in the pattern, or isn't the current key in the pattern, reset
+        if (pattern4.indexOf(event.key) < 0 || event.key !== pattern4[current4]) {
         current4 = 0;
         return;
-    }
-    // Update how much of the pattern is complete
-    current4++;
-    // If complete, activate and reset
-    if (pattern4.length === current4) {
+        }
+        // Update how much of the pattern is complete
+        current4++;
+         // If complete, activate and reset
+        if (pattern4.length === current4) {
         current4 = 0;
         activateCheat4();
-    }
-};
+        }
+    };
 
 
 
