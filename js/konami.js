@@ -1,27 +1,37 @@
-//lvl 1
-function activateCheat() {
-        $("h1").text("Level Two")
+    //lvl 1
+    function activateCheat() {
+    $("body").css("background-color", "hotpink");
+    $("h1").text("Level Two")
+    $("h4").text("Don't let me distract you")
             $("p").text("'ArrowDown', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'")
         ('.lvlOne').addClass('.lvlTwo').removeClass('.lvlOne');
 
     }
     //lvl 2
     function activateCheat2() {
-
+        $("body").css("background-color", "orangered");
         $("h1").text("Level Three")
-        $("p").text("'ArrowDown', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'b', 'a'")
+        $("h4").text("Yaaawnn.. these are the easy ones")
+        $("p").text("'ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'b', 'a'")
         ('.lvlOne').addClass('.lvlThree').removeClass('.lvlTwo');
 
     }
     //lvl3
-function activateCheat3() {
-
+    function activateCheat3() {
+    $("body").css("background-color", "red");
     $("h1").text("Level Four")
-    $("p").text("'ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'ArrowRight', 'b', 'a'")
+    $("h4").text("oh, ok.... I see you")
+    $("p").text("'ArrowLeft', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'")
     ('.lvlOne').addClass('.lvlFour').removeClass('.lvlOne');
-
-}
-
+    }
+    //lvl4
+    function activateCheat4() {
+        $("body").css("background-color", "black");
+        $("h1").text("Level Five")
+        $("h4").text("Lets start picking it up.")
+        $("p").text("'ArrowLeft', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'")
+        ('.lvlOne').addClass('.lvlFive').removeClass('.lvlOne');
+    }
 
 
 
@@ -59,12 +69,12 @@ var keyHandler = function (event) {
         // If complete, activate and reset
         if (pattern2.length === current2) {
             current2 = 0;
-            activateCheat3();
+            activateCheat2();
         }
     };
 
     //lvl 3
-    var pattern3 = ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowLeft', 'ArrowRight', 'ArrowRight', 'b', 'a'];
+    var pattern3 = ['ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'b', 'a'];
     var current3 = 0;
 
     var keyHandler3 = function (event) {
@@ -78,9 +88,31 @@ var keyHandler = function (event) {
         // If complete, activate and reset
         if (pattern3.length === current3) {
             current3 = 0;
-            activateCheat4();
+            activateCheat3();
         }
     };
+
+    //lvl4
+
+var pattern4 = ['ArrowLeft', 'ArrowDown', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+var current4 = 0;
+
+var keyHandler4 = function (event) {
+    // If the key isn't in the pattern, or isn't the current key in the pattern, reset
+    if (pattern4.indexOf(event.key) < 0 || event.key !== pattern4[current4]) {
+        current4 = 0;
+        return;
+    }
+    // Update how much of the pattern is complete
+    current4++;
+    // If complete, activate and reset
+    if (pattern4.length === current4) {
+        current4 = 0;
+        activateCheat4();
+    }
+};
+
+
 
 
 
@@ -88,3 +120,4 @@ var keyHandler = function (event) {
 document.addEventListener('keydown', keyHandler, false);
 document.addEventListener('keydown', keyHandler2, false);
 document.addEventListener('keydown', keyHandler3, false);
+document.addEventListener('keydown', keyHandler4, false);
