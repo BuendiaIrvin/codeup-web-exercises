@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Exercise!</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+
+
+
+<script src="js/keys.js"></script>
+
+<button id="zoom-out">zoomout</button>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+    mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-98.4916, 29.4252], // starting position [lng, lat]
+        zoom: 12 // starting zoom
+    });
+
+    setTimeout(function() {
+        map.flyTo({
+            center: [0, 0],
+            zoom: 9,
+            speed: 0.2,
+            curve: 1,
+        })
+    }, 10000)
+
+
+    $("#zoom").click(function(){
+        var currentZoom = map.getZoom();
+        map.setZoom(currentZoom + 1);
+    });
+    $("#zoomOut").click(function(){
+        var currentZoom = map.getZoom();
+        map.setZoom(currentZoom - 1);
+    });
+
+
+    // Mini Exercise 2
+    // TODO: Create an HTML file called mapbox-2.html. In this file, create a map centered
+    // TODO: on New York with a marker on the Statue of Liberty. Add a popup to the Statue of
+    // TODO: Liberty marker with the text "Statue of Liberty".
+    // *BONUS - when the marker is dragged and released, display the coordinates in an H1.
+    // New York = [-74.2179, 43.2994]
+    // Statue of Liberty = [-74.0445, 40.6892]
+
+</script>
+</body>
+</html>
