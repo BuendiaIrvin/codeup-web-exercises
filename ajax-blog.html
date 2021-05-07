@@ -14,16 +14,11 @@
             justify-content: center;
 
         }
-        h1 {
-            display: flex;
-            justify-content: center;
-            Background-color: lightpink;
-        }
 
     </style>
 </head>
 <body>
-    <h1>Da Blog</h1>
+    <h1 class="p-3 mb-2 text-white text-center">Da Blog</h1>
         <div id="posts"></div>
 
 
@@ -38,10 +33,10 @@
             console.log(blogs);
             for (var j = 0; j < blogs.length; j++) {
                 var htmlStr = "<div id='blog-" + (j + 1) + "' class='card' style='margin: 2em'>";
-                htmlStr += "<h3>" + blogs[j].title + "</h3>";
-                htmlStr += "<p>" + blogs[j].content + "</p>";
-                htmlStr += "<p>" + blogs[j].categories + "</p>";
-                htmlStr += "<p>" + blogs[j].date + "</p>";
+                htmlStr += "<h3 class=\"text-white bg-dark text-center\">" + blogs[j].title + "</h3>";
+                htmlStr += "<p class='text-center'>" + blogs[j].content + "</p>";
+                htmlStr += "<p class='text-center'>" + blogs[j].categories + "</p>";
+                htmlStr += "<p class=\"text-right\">" + blogs[j].date + "</p>";
                 htmlStr += "</div>";
                 $("#posts").append(htmlStr);
             }
