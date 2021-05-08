@@ -24,54 +24,76 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-98.5746,29.4495], // starting position [lng, lat]
-        zoom: 13 // starting zoom
+        zoom: 10 // starting zoom
     });
 
-
-    var marker = new mapboxgl.Marker({
-        color: 'red'
-    })
-        .setLngLat([-98.5746,29.4495])
-        .addTo(map);
-
-    var popup = new mapboxgl.Popup()
-        .setLngLat(marker.getLngLat())
-        .setHTML("<h3>Iselas Tacos</h3>")
-
-    $(marker).click(function(){
-        popup.addTo(map);
-    })
-
-    var popup = new mapboxgl.Popup()
-        .setLngLat(marker.getLngLat())
-        .setHTML("<h3>Iselas Tacos</h3>")
-        .setMaxWidth("300px")
-
-    marker.setPopup(popup);
-
-
-
-    var marker2 = new mapboxgl.Marker({
-        color: 'red'
-    })
-        .setLngLat([-98.5664,29.4488])
-        .addTo(map);
-
-    var popup2 = new mapboxgl.Popup()
-        .setLngLat(marker2.getLngLat())
-        .setHTML("<h3>La Sorrentina</h3>")
-
-    $(marker2).click(function(){
-        popup2.addTo(map);
-    })
-
-    var popup2 = new mapboxgl.Popup()
-        .setLngLat(marker2.getLngLat())
-        .setHTML("<h3>La Sorrentina</h3>")
-        .setMaxWidth("300px")
-
-    marker2.setPopup(popup2);
-
+    //
+    // var marker = new mapboxgl.Marker({
+    //     color: 'red'
+    // })
+    //     .setLngLat([-98.5746,29.4495])
+    //     .addTo(map);
+    //
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat(marker.getLngLat())
+    //     .setHTML("<h3>Iselas Tacos</h3>")
+    //
+    // $(marker).click(function(){
+    //     popup.addTo(map);
+    // })
+    //
+    // var popup = new mapboxgl.Popup()
+    //     .setLngLat(marker.getLngLat())
+    //     .setHTML("<h3>Iselas Tacos</h3>")
+    //     .setMaxWidth("300px")
+    //
+    // marker.setPopup(popup);
+    //
+    //
+    //
+    // var marker2 = new mapboxgl.Marker({
+    //     color: 'red'
+    // })
+    //     .setLngLat([-98.5664,29.4488])
+    //     .addTo(map);
+    //
+    // var popup2 = new mapboxgl.Popup()
+    //     .setLngLat(marker2.getLngLat())
+    //     .setHTML("<h3>La Sorrentina</h3>")
+    //
+    // $(marker2).click(function(){
+    //     popup2.addTo(map);
+    // })
+    //
+    // var popup2 = new mapboxgl.Popup()
+    //     .setLngLat(marker2.getLngLat())
+    //     .setHTML("<h3>La Sorrentina</h3>")
+    //     .setMaxWidth("300px")
+    //
+    // marker2.setPopup(popup2);
+    //
+    //
+    // var marker3 = new mapboxgl.Marker({
+    //     color: 'red'
+    // })
+    //     .setLngLat([-98.5664,29.4488])
+    //     .addTo(map);
+    //
+    // var popup3 = new mapboxgl.Popup()
+    //     .setLngLat(marker3.getLngLat())
+    //     .setHTML("<h3>La Sorrentina</h3>")
+    //
+    // $(marker3).click(function(){
+    //     popup3.addTo(map);
+    // })
+    //
+    // var popup3 = new mapboxgl.Popup()
+    //     .setLngLat(marker3.getLngLat())
+    //     .setHTML("<h3>La Sorrentina</h3>")
+    //     .setMaxWidth("300px")
+    //
+    // marker3.setPopup(popup3);
+    //
 
 
 
@@ -79,10 +101,33 @@
         {
             name: 'Iselas Tacos',
             lngLat: [-98.5746,29.4495],
-            color:
+            color:'blue'
         },
+        {
+            name: 'La Sorrentina',
+            lngLat: [-98.5664,29.4488],
+            color: 'red'
+        },
+        {
+            name: 'Tacos la Salsita',
+            lngLat: [-98.6599631,29.416957],
+            color: 'hotpink'
+        }
     ]
 
+    function display(restaurants) {
+        var marker = new mapboxgl.Marker({
+            color: restaurants.color,
+            draggable: false,
+        })
+            .setLngLat(restaurants.lngLat)
+            .addTo(map);
+        var popup = new mapboxgl.Popup()
+            .setLngLat(restaurants.lngLat)
+            .setHTML("<h3>" + restaurants.name + "</h3>");
+        marker.setPopup(popup);
+    }
+    favRestaurants.forEach(display);
 
     // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
