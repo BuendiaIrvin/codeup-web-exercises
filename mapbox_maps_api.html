@@ -24,14 +24,15 @@
         container: 'map', // container ID
         style: 'mapbox://styles/mapbox/streets-v11', // style URL
         center: [-98.5746,29.4495], // starting position [lng, lat]
-        zoom: 12 // starting zoom
+        zoom: 13 // starting zoom
     });
+
+
     var marker = new mapboxgl.Marker({
         color: 'red'
     })
         .setLngLat([-98.5746,29.4495])
         .addTo(map);
-
 
     var popup = new mapboxgl.Popup()
         .setLngLat(marker.getLngLat())
@@ -40,6 +41,51 @@
     $(marker).click(function(){
         popup.addTo(map);
     })
+
+    var popup = new mapboxgl.Popup()
+        .setLngLat(marker.getLngLat())
+        .setHTML("<h3>Iselas Tacos</h3>")
+        .setMaxWidth("300px")
+
+    marker.setPopup(popup);
+
+
+
+    var marker2 = new mapboxgl.Marker({
+        color: 'red'
+    })
+        .setLngLat([-98.5664,29.4488])
+        .addTo(map);
+
+    var popup2 = new mapboxgl.Popup()
+        .setLngLat(marker2.getLngLat())
+        .setHTML("<h3>La Sorrentina</h3>")
+
+    $(marker2).click(function(){
+        popup2.addTo(map);
+    })
+
+    var popup2 = new mapboxgl.Popup()
+        .setLngLat(marker2.getLngLat())
+        .setHTML("<h3>La Sorrentina</h3>")
+        .setMaxWidth("300px")
+
+    marker2.setPopup(popup2);
+
+
+
+
+    var favRestaurants = [
+        {
+            name: 'Iselas Tacos',
+            lngLat: [-98.5746,29.4495],
+            color:
+        },
+    ]
+
+
+    // Add zoom and rotation controls to the map.
+    map.addControl(new mapboxgl.NavigationControl());
 
     $("#btn").click(function() {
         var userInput = $("#input").val();
