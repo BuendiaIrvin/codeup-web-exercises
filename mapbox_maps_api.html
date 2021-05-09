@@ -101,17 +101,20 @@
         {
             name: 'Iselas Tacos',
             lngLat: [-98.5746,29.4495],
-            color:'blue'
+            color:'blue',
+            info: "Every sunday, Menudo is a traditon in my family, and this is the best place to go."
         },
         {
             name: 'La Sorrentina',
             lngLat: [-98.5664,29.4488],
-            color: 'red'
+            color: 'red',
+            info: "I love Italian food, this is a great hole in the wall with traditional italian plates."
         },
         {
             name: 'Tacos la Salsita',
             lngLat: [-98.6599631,29.416957],
-            color: 'hotpink'
+            color: 'hotpink',
+            info: "This is only a food truck, but they have the best street tacos in the area."
         }
     ]
 
@@ -124,7 +127,8 @@
             .addTo(map);
         var popup = new mapboxgl.Popup()
             .setLngLat(restaurants.lngLat)
-            .setHTML("<h3>" + restaurants.name + "</h3>");
+            .setHTML("<h3>" + restaurants.name + "</h3>" + "<p>" + restaurants.info + "</p>");
+
         marker.setPopup(popup);
     }
     favRestaurants.forEach(display);
