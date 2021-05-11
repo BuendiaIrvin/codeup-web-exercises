@@ -1,0 +1,22 @@
+.mapping {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #0fb784;
+}
+
+body {
+    background-color: #5784f3;
+}
+
+#weather {
+    margin:1em;
+}
