@@ -7,87 +7,79 @@
 </head>
 <body>
 <h1>Goodday Weather App!</h1>
-<p id="insertWeather"></p>
-<button id="the-button">Reread The JSON!</button>
-<button id="the-button2">Reread The JSON!</button>
+<!--<div id='map' style='width: 600px; height: 600px;'></div>-->
+<div id="weather"></div>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
 <script>
-    $.get("http://api.openweathermap.org/data/2.5/weather", {
-        APPID: WEATHER_MAP_TOKEN,
-        lat:    29.423017,
-        lon:   -98.48527,
-        units: "imperial"
-    }).done(function(data) {
-        console.log('current', data);
-        var zone = data.name
-        var weth = data.main.feels_like
-        var max = data.main.temp_max
-        var min = data.main.temp_min
-        var actual = data.weather[0].main
+    var coordinates = [29.4241, -98.4936];
+    $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + coordinates[0] + "&lon=" + coordinates[1] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
+        .done(function (resp) {
+            console.log(resp);
+            var today = resp.daily[0];
+            var todayDate = new Date(today.dt * 1000);
+            var tomorrow = resp.daily[1];
+            var tomorrowDate = new Date(tomorrow.dt * 1000);
+            var afterT = resp.daily[2];
+            var afterTomorrow = new Date(afterT.dt * 1000);
+            console.log(todayDate);
 
-
-
-
-todaysWeather = [
-    {
-        date: 'Today',
-        main: actual,
-        feelsLike: Math.round(weth),
-        tempMax: Math.round(max),
-        tempMin: Math.round(min),
-    }
-
-
-    ]
-
-    function buildStuff() {
-        $("#insertWeather").html("");
-            for (var j = 0; j < todaysWeather.length; j++) {
-                var htmlStr = "<div id='weather-" + (j + 1) + "' class='card' style='margin: 2em'>";
-                htmlStr += "<div class='card-body'>"
-                htmlStr += "<h5 class='card-title'>" + todaysWeather[j].date + "</h5>";
-                htmlStr += "<div class='card-text'>"
-                htmlStr += "<p>" + "Feels like: " + todaysWeather[j].feelsLike + '°' + "</p>";
-                htmlStr += "<p>" + "Weather: " + todaysWeather[j].main + "</p>";
-                htmlStr += "<p>" + "High: " + todaysWeather[j].tempMax + '°' +  "</p>";
-                htmlStr += "<p>" + "Low: " + todaysWeather[j].tempMin + '°' +  "</p>";
-                htmlStr += "</div>";
-                htmlStr += "</div>";
-                htmlStr += "</div>";
-                $("#insertWeather").append(htmlStr);
+            function dayWeather() {
+                $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                    APPID: WEATHER_MAP_TOKEN,
+                    lat: 29.423017,
+                    lon: -98.48527,
+                    units: "imperial"
+                }).done(function (data) {
+                    console.log('current weather', data);
+                    console.log(data);
+                    // for (var i = 0; i < data.daily.length; i++) {
+                        var htmlStr = "<div id='weather'>";
+                        htmlStr += '<p>' + todayDate + '</p>';
+                        htmlStr += '<p>' + data.current.weather[0].main + '</p>';
+                        htmlStr += '<p>' + data.current.temp + '</p>';
+                        htmlStr += '<p>' + data.current.feels_like + '</p>';
+                        htmlStr += '<p>' + data.current.wind_speed + '</p>';
+                    htmlStr += '<p>' + tomorrowDate + '</p>';
+                        htmlStr += '<p>' + data.daily[1].weather[0].main + '</p>';
+                        htmlStr += '<p>' + data.daily[1].temp.day + '</p>';
+                        htmlStr += '<p>' + data.daily[1].feels_like.day + '</p>';
+                        htmlStr += '<p>' + data.daily[1].wind_speed + '</p>';
+                    htmlStr += '<p>' + afterTomorrow + '</p>';
+                        htmlStr += '<p>' + data.daily[2].weather[0].main + '</p>';
+                        htmlStr += '<p>' + data.daily[2].temp.day + '</p>';
+                        htmlStr += '<p>' + data.daily[2].feels_like.day + '</p>';
+                        htmlStr += '<p>' + data.daily[2].wind_speed + '</p>';
+                        htmlStr += '</div>';
+                    $('#weather').append(htmlStr)
+                    // }
+                });
             }
-    }
 
-    $("#the-button").click(buildStuff);
+            dayWeather();
+        });
+            // for (var i = 0; i < data.daily.length; i++) {
+            //     var htmlStr = "<div id='weather" + (i + 1) + "'>";
+            //     htmlStr += '<p>' + data.daily[1].weather[0].main + '</p>';
+            //     htmlStr += '<p>' + data.daily[1].temp.day + '</p>';
+            //     htmlStr += '<p>' + data.daily[1].feels_like.day + '</p>';
+            //     htmlStr += '<p>' + data.daily[1].wind_speed + '</p>';
+            //     htmlStr += '</div>';
+            //     $('#weather').append(htmlStr)
+            // }
+            // dayWeather();
+            //
 
     //
-    // function buildStuff2() {
-    //     $("#insertWeather2").html("");
-    //     for (var j = 1; j < todaysWeather.length; j++) {
-    //         var htmlStr = "<div id='weather-" + (j + 1) + "' class='card' style='margin: 2em'>";
-    //         htmlStr += "<div class='card-body'>"
-    //         htmlStr += "<h5 class='card-title'>" + todaysWeather[1].date + "</h5>";
-    //         htmlStr += "<div class='card-text'>"
-    //         htmlStr += "<p>" + "Feels like: " + todaysWeather[1].feelsLike + '°' + "</p>";
-    //         htmlStr += "<p>" + "Weather: " + todaysWeather[1].main + "</p>";
-    //         htmlStr += "<p>" + "High: " + todaysWeather[1].tempMax + '°' +  "</p>";
-    //         htmlStr += "<p>" + "Low: " + todaysWeather[1].tempMin + '°' +  "</p>";
-    //         htmlStr += "</div>";
-    //         htmlStr += "</div>";
-    //         htmlStr += "</div>";
-    //         $("#insertWeather2").append(htmlStr);
-    //     }
-    // }
-    //
-    // $("#the-button2").click(buildStuff2);
-
-    });
-
-
-
+    // mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
+    // var map = new mapboxgl.Map({
+    //     container: 'map',
+    // });
+    // map.setStyle('mapbox://styles/mapbox/satellite-streets-v11')
+    // map.setZoom(10)
+    // map.setCenter([-98.4936, 29.4241])
 
 </script>
 </body>
