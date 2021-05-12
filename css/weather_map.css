@@ -20,3 +20,8 @@ body {
 #weather {
     margin:1em;
 }
+
+.card-header {
+    background-color: #b4d455;
+    color: black;
+}
