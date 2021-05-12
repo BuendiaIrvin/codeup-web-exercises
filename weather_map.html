@@ -8,18 +8,18 @@
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
-<h1>Goodday Weather App!</h1>
+<h1>MyWeather App</h1>
 <h2></h2>
 <div class="mapping">
 <div id='map' style='width: 800px; height: 300px;'></div>
 </div>
-<label for="input">Type an address:</label>
-<input type="text" id="input">
-<button id="btn">Click me to move someplace!</button>
+<div class="searchBar" >
+<label for="input"></label>
+<input type="text" id="input" placeholder="Type an address..">
+<button id="btn">Search</button>
+</div>
 <div id="weather" class="row">
 </div>
-
-<div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
 
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/keys.js"></script>
@@ -36,7 +36,7 @@
     });
     // map marker
     var marker = new mapboxgl.Marker({
-        color: 'hotpink',
+        color: '#0fb784',
     })
         .setLngLat([-98.4936, 29.4241])
         .setDraggable(true)
@@ -44,12 +44,11 @@
 
     marker.on('dragend', function () {
         var newCenter = marker.getLngLat().toArray();
-        console.log(marker.getLngLat());
         $('#weather').html('');
         marker.setLngLat(newCenter);
         map.flyTo({center: newCenter});
         weather([marker.getLngLat().lng, marker.getLngLat().lat]);
-
+    });
 
     // searchbar
     $("#btn").click(function() {
@@ -66,7 +65,7 @@
             weather([marker.getLngLat().lng, marker.getLngLat().lat]);
         });
     });
-    });
+
     // function to change weather cards
     function weather(x) {
 
@@ -74,25 +73,33 @@
             .done(function (resp) {
                 console.log(resp);
                 var htmlStr= "";
-                for (var i =0;i <= 5; i++) {
+                for (var i =0;i <= 4; i++) {
                     var today = resp.daily[i];
                     var todayDate = new Date(today.dt * 1000);
+                    var dateToday= todayDate.toDateString()
                     var description = resp.daily[i].weather[0].main
                     var tempature = resp.daily[i].temp.day
                     var humidity = resp.daily[i].humidity
                     var windSpeed = resp.daily[i].wind_speed
                 // icon grabber
                     var iconcode = resp.daily[i].weather[0].icon;
-                    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+                    var iconurl = 'http://openweathermap.org/img/w/' + iconcode + '.png';
                     $('#wicon').attr('src', iconurl);
+                // backgorund changer
+                         if (resp.daily[0].weather[0].main == 'Rain') {$("body").css("background-image", "url('https://images.pexels.com/photos/1710489/pexels-photo-1710489.jpeg?cs=srgb&dl=pexels-longxiang-qian-1710489.jpg&fm=jpg')");
+                    } else if (resp.daily[0].weather[0].main == 'Clouds') {$("body").css("background-image", "url('https://images.pexels.com/photos/844297/pexels-photo-844297.jpeg?cs=srgb&dl=pexels-eberhard-grossgasteiger-844297.jpg&fm=jpg')");
+                    } else if (resp.daily[0].weather[0].main == 'Clear') {$("body").css("background-image", "url('https://images.pexels.com/photos/754419/pexels-photo-754419.jpeg?cs=srgb&dl=pexels-john-tekeridis-754419.jpg&fm=jpg')");
+                    } else {$("body").css("background-image", "url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?cs=srgb&dl=pexels-andre-furtado-1162251.jpg&fm=jpg')");
+                    }
 
-                    // to html
+
+                // to html
                     htmlStr += "<div class='card col-2' style='width: 18rem;'>";
-                    htmlStr += '<div id="icon" class="card-header">' + '<img id="wicon" src="" alt="weather icon">' + todayDate + '</div>';
+                    htmlStr += '<div id="icon" class="card-header">' + '<img id="wicon" src="http://openweathermap.org/img/w/' + iconcode + '.png" alt="weather icon">' + dateToday + '</div>';
                     htmlStr += '<ul class="list-group list-group-flush">'
                     htmlStr += '<li class="list-group-item">' + "Description: " + description + '</li>';
-                    htmlStr += '<li class="list-group-item">' + "Tempature: " + Math.round(tempature) + '</li>';
-                    htmlStr += '<li class="list-group-item">' + "Humidity: " + humidity + '</li>';
+                    htmlStr += '<li class="list-group-item">' + "Temp: " + Math.round(tempature) + "°" + '</li>';
+                    htmlStr += '<li class="list-group-item">' + "Humidity: " + humidity + '%' + '</li>';
                     htmlStr += '<li class="list-group-item">' + "Wind Speed: " + Math.round(windSpeed)+ '</li>';
                     htmlStr += '</div>';
                 }
@@ -101,8 +108,6 @@
     }
     weather([marker.getLngLat().lng, marker.getLngLat().lat]);
 console.log(marker.getLngLat());
-
-
 
 
 </script>
