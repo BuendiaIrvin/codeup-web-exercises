@@ -13,6 +13,9 @@
 <div class="mapping">
 <div id='map' style='width: 800px; height: 300px;'></div>
 </div>
+<label for="input">Type an address:</label>
+<input type="text" id="input">
+<button id="btn">Click me to move someplace!</button>
 <div id="weather" class="row">
 </div>
 
@@ -23,6 +26,7 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
 <script>
+    // map
     mapboxgl.accessToken = MAPBOX_ACCESS_TOKEN;
     var map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -30,7 +34,7 @@
         center: [-98.4936, 29.4241], // starting position [lng, lat]
         zoom: 9 // starting zoom
     });
-
+    // map marker
     var marker = new mapboxgl.Marker({
         color: 'hotpink',
     })
@@ -39,14 +43,31 @@
         .addTo(map);
 
     marker.on('dragend', function () {
-        var coords = marker.getLngLat().toArray();
+        var newCenter = marker.getLngLat().toArray();
         console.log(marker.getLngLat());
         $('#weather').html('');
+        marker.setLngLat(newCenter);
+        map.flyTo({center: newCenter});
         weather([marker.getLngLat().lng, marker.getLngLat().lat]);
+
+
+    // searchbar
+    $("#btn").click(function() {
+        var userInput = $("#input").val();
+        geocode(userInput, MAPBOX_ACCESS_TOKEN).then(function (info) {
+            console.log(info);
+            var newCenter = {
+                lng: info[0],
+                lat: info[1]
+            };
+            $('#weather').html('');
+            marker.setLngLat(newCenter);
+            map.flyTo({center: newCenter});
+            weather([marker.getLngLat().lng, marker.getLngLat().lat]);
+        });
     });
-
-
-
+    });
+    // function to change weather cards
     function weather(x) {
 
         $.get("https://api.openweathermap.org/data/2.5/onecall?units=imperial&lat=" + x[1] + "&lon=" + x[0] + "&exclude=current,hourly,minutely&appid=" + WEATHER_MAP_TOKEN)
@@ -60,13 +81,12 @@
                     var tempature = resp.daily[i].temp.day
                     var humidity = resp.daily[i].humidity
                     var windSpeed = resp.daily[i].wind_speed
-
+                // icon grabber
                     var iconcode = resp.daily[i].weather[0].icon;
                     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
                     $('#wicon').attr('src', iconurl);
 
-
-                    // <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                    // to html
                     htmlStr += "<div class='card col-2' style='width: 18rem;'>";
                     htmlStr += '<div id="icon" class="card-header">' + '<img id="wicon" src="" alt="weather icon">' + todayDate + '</div>';
                     htmlStr += '<ul class="list-group list-group-flush">'
