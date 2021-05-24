@@ -39,14 +39,18 @@ gitHubUsername('BuendiaIrvin')
 // }
 // wait(1000).then(() => console.log('You\'ll see this after 1 second'));
 // wait(3000).then(() => console.log('You\'ll see this after 3 seconds'));
+//
+// const wait = ms => {
+//     return new Promise(resolve => {
+//         setTimeout(() => {
+//             resolve(`You'll see this after ${ms/1000} seconds`);
+//         }, ms);
+//     })
+// }
+// wait(1000).then(message => console.log(message));
+// wait(3000).then((message) => console.log(message));
+// wait(5000).then((message) => console.log(message));
 
-const wait = ms => {
-    return new Promise(resolve => {
-        setTimeout(() => {
-            resolve(`You'll see this after ${ms/1000} seconds`);
-        }, ms);
-    })
-}
-wait(1000).then(message => console.log(message));
-wait(3000).then((message) => console.log(message));
-wait(5000).then((message) => console.log(message));
+
+let numbers = [1, 2, 3, 4, 5];
+numbers.map(n => n * 3)
