@@ -23,11 +23,24 @@
 //     fizzBuzz(30);
 // })
 
-function seven() {
-    return 7;
+// function seven() {
+//     return 7;
+// }
+// console.log(seven())
+//
+// const returnSeven = () => 7;
+//
+// console.log(returnSeven());
+
+function timesFive(x) {
+    if(isNaN(x)) {
+        console.log("0");
+    } else {
+        console.log(x * 5);
+    }
 }
-console.log(seven())
+timesFive(5)
+timesFive(20)
+timesFive("five")
 
-const returnSeven = () => 7;
-
-console.log(returnSeven());
+const multiplybyFive = num => typeof  num === "number" ? num * 5 : 0;
