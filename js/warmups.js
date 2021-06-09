@@ -61,3 +61,26 @@ function reverseString(s) {
 console.log(reverseString(""))
 console.log(reverseString("abc"))
 console.log(reverseString("aaabbbcccd"))
+
+
+
+// Here is a simple example of a Promise:
+const resultPromise = function(idea) {
+    return new Promise(function(resolve, reject) {
+        if (idea.isGood) {
+            resolve(idea);
+        } else {
+            reject({
+                idea: idea,
+                reason: "Not Realistic"
+            });
+        }
+    });
+};
+
+resultPromise({idea: "Make Gold from Iron", isGood: false})
+    .then(function() {
+        console.info("I'm Rich!")
+    }, function(err) {
+        console.info("Rejected as: " + err.reason);
+    });
