@@ -78,9 +78,24 @@ const resultPromise = function(idea) {
     });
 };
 
+// Write a function that showcases the usage of closures.
+
 resultPromise({idea: "Make Gold from Iron", isGood: false})
     .then(function() {
         console.info("I'm Rich!")
     }, function(err) {
         console.info("Rejected as: " + err.reason);
     });
+
+
+function multiplier(first) {
+    let a = first;
+    return function(b) {
+        return a * b;
+    };
+}
+
+let multiplyBy2 = multiplier(2);
+
+console.info(multiplyBy2(4));
+console.info(multiplyBy2(5));
