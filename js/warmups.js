@@ -99,3 +99,23 @@ let multiplyBy2 = multiplier(2);
 
 console.info(multiplyBy2(4));
 console.info(multiplyBy2(5));
+
+
+function linearSearch(arr, x) {
+    let lo = 0;
+    let hi = arr.length-1;
+    // Iterate from start until the end of list
+    while (lo <= hi) {
+        // If item was found then return index
+        if (arr[lo] === x) {
+            return lo;
+        } else {
+            lo += 1
+        }
+    }
+    // Return -1 to denote the item was not found
+    return -1;
+}
+
+let arr = [1,3,5,7,9,11,14,18,22];
+console.info("Item was found at index: " + linearSearch(arr, 22));
